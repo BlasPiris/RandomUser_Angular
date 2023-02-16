@@ -1,0 +1,9 @@
+<form #formulario="ngForm" (ngSubmit)="onSubmit()">
+    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="nombre_usr" required>
+    <span *ngIf="nombre.touched && !nombre.valid">NO VALE</span>
+    <input type="submit" [disabled]="!formulario.valid">
+</form>
+<a [ngStyle]="{'background-color':this.nombre_usr=='Blas' ? 'red':'blue'}">{{this.nombre_usr}}</a>
+
+
+
